@@ -1,0 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Stick&family=Strait&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color: black;
+    font-family: 'Stick',sans-serif;
+
+}
+.bg-img{
+    background: url('/assets/person-is-typing-computer-keyboard-background-is-blurred-with-coloured-light.avif') center center/cover;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    filter: blur(8px);
+    
+
+}
+h1{
+    color: white;
+    
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    padding: 2em;
+    border-radius: .5em;
+    
+}
+.container h2{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-control{
+    margin: 1em;
+    position: relative;
+    
+}
+.form-control input{
+    display: block;
+    outline: 0;
+    width: 100%;
+    padding: .3rem;
+    border: 0;
+    border-bottom: 2px black solid;
+
+
+}
+
+.container button{
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    font-family: inherit;
+    
+
+}
+.container button:active{
+    transform: scale(0.95);
+}
+
+.new-user-display a{
+    text-decoration: none;
+    color: rgb(106, 231, 74);
+}
+
+.form-control label{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.form-control input:focus,.form-control input:valid{
+    border-bottom-color: rgb(12, 116, 150);
+}
+.form-control label span{
+    display: inline-block;
+    transition: .3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    min-width: 5px;
+   
+}
+.form-control input:focus+label span,.form-control input:valid +label span{
+    color: rgb(12, 116, 150);
+    transform: translateY(-1em);
+}
+
+button{
+    background-color: black;
+    color: white;
+    padding: .4em;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.ripple{
+    position: relative;
+    overflow: hidden;
+}
+button:focus{
+    outline: none;
+}
+
+.circle{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    transform: translate(-50%,-50%) scale(0);
+    animation: scale .5s ease-out;
+
+}
+
+@keyframes scale{
+    to{
+        transform: translate(-50%,-50%) scale(3);
+        opacity: 0;
+    }
+}

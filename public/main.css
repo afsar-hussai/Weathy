@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Stick&family=Strait&display=swap');
+
+*{
+
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+h1{
+    color: brown;
+    font-family: Dancing Script;
+    font-weight: 800;
+    font-size: 3rem;
+  
+}
+.bg-img{
+    position: absolute;
+    background: url('/assets/All seasons.webp') center center/cover;
+    inset: 0;
+    z-index: -1;
+
+    filter: blur(10px)
+
+}
+
+
+
+.header{
+    text-align: center;
+    padding: 1em;
+    background-color: black;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: Dancing Script;
+    font-weight: 700;
+    font-size: x-large;
+    
+}
+
+.results{
+    display: flex;
+   
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.content{
+  
+    margin-top: 1.5em;
+    position: relative;
+    top: 1px;
+    
+}
+
+.content::after{
+    content: '';
+    position: absolute;
+
+    top: -0.4rem;
+    left: -.4rem;
+    
+    background-image: conic-gradient(from var(--angle),transparent 90%,rgb(226, 10, 10));
+    animation: 8s linear infinite rotate;
+    padding: 2rem;
+    width: 30.5rem;
+    height: 14.5rem;
+    border-radius: 10px;
+    z-index: -1;
+    filter: blur(2px) opacity(1);
+}
+
+@keyframes rotate{
+    from{
+        --angle:0deg;
+    }
+    to{
+        --angle:360deg
+    }
+}
+
+.container{
+    padding: 2.5em;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+.humidity{
+    background-color: darkcyan;
+    border-bottom-left-radius: 10px;
+}
+.temperature{
+    background-color:coral;
+}
+
+.precipitation{
+    background-color: slateblue;
+    border-bottom-right-radius: 10px;
+}
+
+.value{
+    
+    text-align: center;
+    padding: 1.8em;
+    
+}
+.field{
+    
+    text-align: center;
+    
+}
+
+.search-div{
+    display: flex;
+    background-color: white;
+    padding: .5em;
+    border-radius: 3px;
+    transition: .5s ease;
+    
+
+
+}
+
+.input-search{
+    
+    width: 0rem;
+    border: none;
+    outline: 0;
+    transition: .8s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.search-icon{
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+
+}
+
+.search-div:hover .input-search{
+    width: 20em;
+    
+
+}
+.search-div:hover{
+    border: 2px solid rgb(12, 144, 38);
+    box-shadow: 0 0 15px rgb(12, 144, 38);
+}
+
+
+
+.input-search:focus{
+    width: 20em;
+}
+
+
+/*chatGPT code below*/
+
+
+.suggestions {
+    list-style-type: none; /* Remove default bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.suggestions li {
+    padding: 8px;
+    cursor: pointer;
+    background-color: #f9f9f9; /* Light background */
+    border: 1px solid #ddd; /* Light border */
+    
+    transition: background-color 0.2s ease;
+    z-index: 1;
+}
+
+.suggestions li:hover {
+    background-color: #e2e2e2; /* Highlight on hover */
+}
+
+.suggestions li.error {
+    color: red;
+    font-style: italic;
+    border: none;
+}
